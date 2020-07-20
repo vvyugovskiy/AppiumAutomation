@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
 
-public class TestRunner {
+public class EtsyTest {
 
     private AppiumDriver<MobileElement> driver;
 
@@ -24,8 +24,9 @@ public class TestRunner {
             DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
             desiredCapabilities.setCapability(MobileCapabilityType.VERSION, "7.0");
-            desiredCapabilities.setCapability(MobileCapabilityType.APP,System.getProperty("user.dir")+"/apps/etsy.apk");
             desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel_2");
+            desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
+            desiredCapabilities.setCapability(MobileCapabilityType.APP,System.getProperty("user.dir")+"/apps/etsy.apk");
             desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 20000);
             driver = new AppiumDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"),desiredCapabilities);
             Thread.sleep(2000);
