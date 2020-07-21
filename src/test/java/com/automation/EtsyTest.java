@@ -30,17 +30,25 @@ public class EtsyTest {
             desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 20000);
             driver = new AppiumDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"),desiredCapabilities);
             Thread.sleep(2000);
-            WebElement getStarted = driver.findElement(By.id("com.etsy.android:id/btn_link"));
-            getStarted.click();
+//            WebElement getStarted = driver.findElement(By.id("com.etsy.android:id/btn_link"));
+//            getStarted.click();
 
-            Thread.sleep(3000);
-            WebElement usernameField = driver.findElement(By.id("com.etsy.android:id/edit_username"));
-            usernameField.sendKeys("v.vyugovskiy@mail.com");
-            Thread.sleep(1000);
-            WebElement passwordField = driver.findElement(By.id("com.etsy.android:id/edit_password"));
-            passwordField.sendKeys("resi1986");
-            WebElement loginButton = driver.findElement(By.id("com.etsy.android:id/button_signin"));
-            loginButton.click();
+            WebElement searchField = driver.findElement(By.id("com.etsy.android:id/search_src_text"));
+            searchField.click();
+            Thread.sleep(2000);
+            WebElement search1 = driver.findElement(By.id("com.etsy.android:id/search_src_text"));;
+            search1.sendKeys("Best shirt for men");
+            driver.getKeyboard().pressKey(Keys.ENTER);
+
+
+//            Thread.sleep(3000);
+//            WebElement usernameField = driver.findElement(By.id("com.etsy.android:id/edit_username"));
+//            usernameField.sendKeys("v.vyugovskiy@mail.com");
+//            Thread.sleep(1000);
+//            WebElement passwordField = driver.findElement(By.id("com.etsy.android:id/edit_password"));
+//            passwordField.sendKeys("resi1986");
+//            WebElement loginButton = driver.findElement(By.id("com.etsy.android:id/button_signin"));
+//            loginButton.click();
 
             Thread.sleep(3000);
             driver.closeApp();
